@@ -38,4 +38,8 @@ describe('template spec', () => {
     cy.get('[aria-label="Add to Basket"]').click();
     cy.get('.fa-3x.warn-notification').should('have.text', '0');
   })
+  it('Search an element that is not in stock with POM', () => {
+    products.addItemToBasket('OWASP Juice Shop "King of the Hill" Facemask');
+    products.verifyItemAddedToBasket('0');
+  })
 })
