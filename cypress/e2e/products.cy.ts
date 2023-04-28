@@ -7,7 +7,7 @@ describe('template spec', () => {
 
   beforeEach(function () {
     login.navigateToLoginAndCloseDialog('http://localhost:3000/login#/login');
-    login.login('sanja.gorgievska@gmail', '#Newuser12#');
+    login.login('maja.vuevska@gmail.com', '12345');
     login.verifySuccessfullLogin();
   })
 

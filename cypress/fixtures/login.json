@@ -1,13 +1,9 @@
 {
     "loginData": [
         {
-            "email": "",
-            "password": ""
+            "email": "maja.vuevska@gmail.com",
+            "password": "12345"
 
-        },
-        {
-            "email": "",
-            "password": ""
         }
     ]
 }
