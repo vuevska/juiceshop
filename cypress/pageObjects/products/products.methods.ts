@@ -10,4 +10,11 @@ export class ProductMethods{
     verifyItemAddedToBasket(numAdded: string){
         ProductElements.ElementsProduct.getLblNotification().should('have.text', numAdded)
     }
+    deleteItemFromBasket(){
+        ProductElements.ElementsProduct.getBtnBasket().click();
+        ProductElements.ElementsProduct.getBtnDeleteFromBasket().click();
+    }
+    verifyEmptyBasket(){
+        ProductElements.ElementsProduct.getTxtBasket().should('have.text', 'Total Price: 0¤');
+    }
 }

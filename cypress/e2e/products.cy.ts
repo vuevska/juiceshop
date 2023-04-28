@@ -27,4 +27,8 @@ describe('template spec', () => {
     products.addItemToBasket('apple juice');
     products.verifyItemAddedToBasket('1');
   })
+  it('Delete item from basket with POM', () => {
+    products.deleteItemFromBasket();
+    products.verifyEmptyBasket();
+  })
 })
