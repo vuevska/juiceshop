@@ -11,15 +11,19 @@ describe('template spec', () => {
     login.verifySuccessfullLogin();
   })
 
-  it('User should be able to add item into basket', () => {
+  it('Add item into basket', () => {
     cy.get('.mat-search_icon-search').click();
     cy.get('#mat-input-0').type('apple juice');
     cy.get('#mat-input-0').type('{enter}');
     cy.get('[aria-label="Add to Basket"]').click();
     cy.get('.fa-3x.warn-notification').should('have.text', '1');
   })
-
-  it('User should be able to add item into basket with POM', () => {
+  it('Delete item from basket', () => {
+    cy.get('[aria-label="Show the shopping cart"]').click();
+    cy.get('[data-icon="trash-alt"]').click();
+    cy.get('#price').should('have.text', 'Total Price: 0¤');
+  })
+  it('Add item into basket with POM', () => {
     products.addItemToBasket('apple juice');
     products.verifyItemAddedToBasket('1');
   })
