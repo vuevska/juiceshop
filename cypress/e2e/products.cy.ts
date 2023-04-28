@@ -31,4 +31,11 @@ describe('template spec', () => {
     products.deleteItemFromBasket();
     products.verifyEmptyBasket();
   })
+  it('Search an element that is not in stock', () => {
+    cy.get('.mat-search_icon-search').click();
+    cy.get('#mat-input-0').type('OWASP Juice Shop "King of the Hill" Facemask');
+    cy.get('#mat-input-0').type('{enter}');
+    cy.get('[aria-label="Add to Basket"]').click();
+    cy.get('.fa-3x.warn-notification').should('have.text', '0');
+  })
 })
